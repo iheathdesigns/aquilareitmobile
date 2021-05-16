@@ -20,22 +20,22 @@ const Home = ({ navigation }) => {
         {
             id: 1,
             name: "Houses",
-            icon: icons.rice_bowl,
+            icon: icons.house,
         },
         {
             id: 2,
             name: "Condos",
-            icon: icons.noodle,
+            icon: icons.condo,
         },
         {
             id: 3,
             name: "Townhouses",
-            icon: icons.hotdog,
+            icon: icons.townhouse,
         },
         {
             id: 4,
             name: "Multi Family Units",
-            icon: icons.hotdog,
+            icon: icons.apartment,
         },
 
     ]
