@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Image } from 'react-native'
 import { Input, Button } from 'react-native-elements'
 import { auth } from '../firebase'
+import { images } from '../constants';
+
 
 const LoginScreen = ({navigation}) => {
 
@@ -30,6 +32,9 @@ const LoginScreen = ({navigation}) => {
 
     return (
         <View style={styles.container}>
+            <Image 
+            style={styles.fullLogo}
+            source={images.fullLogo}/>
             <Input 
             placeholder='Enter your email'
             label='Email'
@@ -60,6 +65,11 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         padding: 10
+    },
+    fullLogo: {
+        width: 66,
+        marginBottom: 10,
+        marginTop: 10
     }
 })
 

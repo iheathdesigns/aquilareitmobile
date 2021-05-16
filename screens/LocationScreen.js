@@ -259,7 +259,7 @@ const LocationScreen = ({ route, navigation }) => {
                                     ...FONTS.h4,
                                     color: COLORS.white
                                 }}>
-                                    Call
+                                    Agent
                                 </Text>
 
                             </TouchableOpacity>

@@ -36,8 +36,26 @@ const sarawak_laksa = require("../assets/images/sarawak-laksa.jpg");
 const sushi = require("../assets/images/sushi.jpg");
 const teh_c_peng = require("../assets/images/teh-c-peng.jpg");
 const tomato_pasta = require("../assets/images/tomato-pasta.jpg");
+const interior_1 = require("../assets/images/interior-1.jpg");
+const interior_2 = require("../assets/images/interior-2.jpg");
+const interior_3 = require("../assets/images/interior-3.jpg");
+const interior_4 = require("../assets/images/interior-4.jpg");
+const interior_5 = require("../assets/images/interior-5.jpg");
+const interior_6 = require("../assets/images/interior-6.jpg");
+const interior_7 = require("../assets/images/interior-7.jpg");
+const interior_8 = require("../assets/images/interior-8.jpg");
+const interior_9 = require("../assets/images/interior-9.jpg");
+const interior_10 = require("../assets/images/interior-10.jpg");
+const interior_11 = require("../assets/images/interior-11.jpg");
+const interior_12 = require("../assets/images/interior-12.jpg");
+const interior_13 = require("../assets/images/interior-13.jpg");
+const interior_14 = require("../assets/images/interior-14.jpg");
+const interior_15 = require("../assets/images/interior-15.jpg");
+const interior_16 = require("../assets/images/interior-16.jpg");
+const fullLogo = require("../assets/images/Aquila_logo.png");
 
 export default {
+    fullLogo,
     avatar_1,
     avatar_2,
     avatar_3,
@@ -48,6 +66,22 @@ export default {
     house_3,
     house_4,
     house_5,
+    interior_1,
+    interior_2,
+    interior_3,
+    interior_4,
+    interior_5,
+    interior_6,
+    interior_7,
+    interior_8,
+    interior_9,
+    interior_10,
+    interior_11,
+    interior_12,
+    interior_13,
+    interior_14,
+    interior_15,
+    interior_16,
     apartment_1,
     condo_1,
     townhouse_1,

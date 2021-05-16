@@ -19,37 +19,37 @@ const ListingScreen = ({ route, navigation }) => {
             setCurrentLocation(currentLocation)
         })
 
-        function editOrder(action, menuId, price) {
-            let orderList = orderItems.slice()
-            let item = orderList.filter(a => a.menuId == menuId)
+        // function editOrder(action, menuId, price) {
+        //     let orderList = orderItems.slice()
+        //     let item = orderList.filter(a => a.menuId == menuId)
             
-            if(action == "+"){
-                if(item.length > 0){
-                    let newQty = item[0].qty + 1
-                    item[0].qty = newQty
-                    item[0].total = item[0].qty * price
-                } else {
-                    const newItem = {
-                        menuId: menuId,
-                        qty: 1,
-                        price: price,
-                        total: price
-                    }
-                    orderList.push(newItem)
-                }
-                setOrderItems(orderList)
+        //     if(action == "+"){
+        //         if(item.length > 0){
+        //             let newQty = item[0].qty + 1
+        //             item[0].qty = newQty
+        //             item[0].total = item[0].qty * price
+        //         } else {
+        //             const newItem = {
+        //                 menuId: menuId,
+        //                 qty: 1,
+        //                 price: price,
+        //                 total: price
+        //             }
+        //             orderList.push(newItem)
+        //         }
+        //         setOrderItems(orderList)
 
-            } else {
-                if(item.length > 0){
-                    if(item[0]?.qty > 0){
-                        let newQty = item[0].qty - 1
-                        item[0].qty = newQty
-                        item[0].total = newQty * price
-                    }
-                }
-                setOrderItems(orderList)
-            }
-        }
+        //     } else {
+        //         if(item.length > 0){
+        //             if(item[0]?.qty > 0){
+        //                 let newQty = item[0].qty - 1
+        //                 item[0].qty = newQty
+        //                 item[0].total = newQty * price
+        //             }
+        //         }
+        //         setOrderItems(orderList)
+        //     }
+        // }
 
         function getOrderQty(menuId) {
             let orderItem = orderItems.filter(a => a.menuId == menuId)
@@ -175,7 +175,7 @@ const ListingScreen = ({ route, navigation }) => {
                                         justifyContent: 'center',
                                         flexDirection: 'row'
                                     }}>
-                                        <TouchableOpacity
+                                        {/* <TouchableOpacity
                                         style={{
                                             width: 50,
                                             backgroundColor: COLORS.white,
@@ -212,7 +212,7 @@ const ListingScreen = ({ route, navigation }) => {
 
                                             <Text style={{...FONTS.body1}}>+</Text>
 
-                                        </TouchableOpacity>
+                                        </TouchableOpacity> */}
 
                                     </View>
 
@@ -226,7 +226,7 @@ const ListingScreen = ({ route, navigation }) => {
                                     marginTop: 15,
                                     paddingHorizontal: SIZES.padding * 2
                                 }}>
-                                    <Text style={{marginVertical: 10, textAlign: 'center', ...FONTS.h2}}>{item.name} - {item.price.toFixed(2)}</Text>
+                                    <Text style={{marginVertical: 10, textAlign: 'center', ...FONTS.h2}}>{item.name}</Text>
                                     <Text style={{...FONTS.body3}}>{item.description}</Text>
                                 </View>
 
@@ -244,7 +244,7 @@ const ListingScreen = ({ route, navigation }) => {
                                         marginRight: 10
                                     }} />
 
-                                    <Text style={{...FONTS.body3, color: COLORS.darkGray}}>{item.calories.toFixed(2)} cal</Text>
+                                    <Text style={{...FONTS.body3, color: COLORS.darkGray}}>${item.calories}K</Text>
 
                                 </View>
 
@@ -328,8 +328,9 @@ const ListingScreen = ({ route, navigation }) => {
                             borderBottomColor: COLORS.lightGray2,
                             borderBottomWidth: 1
                         }}>
-                            <Text style={{...FONTS.h3}}>{getBasketItemCount()} items in cart</Text>
-                            <Text style={{...FONTS.h3}}>${sumOrder()}</Text>
+                            {/* <Text style={{...FONTS.h3}}>{getBasketItemCount()} Seller asking over list price</Text> */}
+                            <Text style={{...FONTS.h3}}>Seller asking over list price</Text>
+                            {/* <Text style={{...FONTS.h3}}>${sumOrder()}</Text> */}
                         </View>
                         <View
                         style={{
@@ -351,18 +352,18 @@ const ListingScreen = ({ route, navigation }) => {
                                     tintColor: COLORS.darkGray
                                 }} />
 
-                                    <Text style={{marginLeft: SIZES.padding, ...FONTS.h4}}>Location</Text>
+                                    <Text style={{marginLeft: SIZES.padding, ...FONTS.h4}}>County</Text>
                             </View>
                             <View style={{flexDirection: 'row'}}>
                                 <Image
-                                source={icons.master_card}
+                                source={icons.search}
                                 resizeMode='contain'
                                 style={{
                                     width: 20,
                                     height: 20,
                                     tintColor: COLORS.darkGray
                                 }} />
-                                <Text style={{marginLeft: SIZES.padding, ...FONTS.h4}}>8888</Text>
+                                <Text style={{marginLeft: SIZES.padding, ...FONTS.h4}}>Mecklenburg</Text>
                             </View>
 
                         </View>
@@ -387,7 +388,7 @@ const ListingScreen = ({ route, navigation }) => {
                                     })}
                                     >
                                         <Text style={{color: COLORS.white, ...FONTS.h2}}>
-                                            Order
+                                            Find on the map
                                         </Text>
 
                                     </TouchableOpacity>
