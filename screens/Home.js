@@ -463,7 +463,7 @@ const Home = ({ navigation }) => {
             const renderItem = ({item}) => (
                 <TouchableOpacity
                 style={{marginBottom: SIZES.padding * 2}}
-                onPress={() => navigation.navigate("ListingScreen", 
+                onPress={() => navigation.navigate("Listing", 
                 {
                     item,
                     currentLocation

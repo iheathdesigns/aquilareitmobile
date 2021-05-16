@@ -381,7 +381,7 @@ const ListingScreen = ({ route, navigation }) => {
                                         alignItems: 'center',
                                         borderRadius: SIZES.radius
                                     }}
-                                    onPress={() => navigation.navigate("LocationScreen", {
+                                    onPress={() => navigation.navigate("Location", {
                                         restaurant: restaurant,
                                         currentLocation: currentLocation
                                     })}
