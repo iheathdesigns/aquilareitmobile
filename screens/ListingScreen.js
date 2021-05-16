@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { StyleSheet, SafeAreaView, View, Text, TouchableOpacity, Image, Animated } from 'react-native';
-import { isIphoneX } from 'react-native-iphone-x-helper';
+
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 
 const ListingScreen = ({ route, navigation }) => {
@@ -395,18 +395,7 @@ const ListingScreen = ({ route, navigation }) => {
                                 </View>
 
                     </View>     
-                    {isIphoneX() &&
-                    <View
-                    style={{
-                        position: 'absolute',
-                        bottom: -34,
-                        left: 0,
-                        right: 0,
-                        height: 34,
-                        backgroundColor: COLORS.white
-                    }}>
-                    </View>
-                    }              
+                                 
                 </View>
             )
         }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import {COLORS, FONTS, icons, SIZES} from '../constants';
@@ -6,18 +6,18 @@ import {COLORS, FONTS, icons, SIZES} from '../constants';
 
 const LocationScreen = ({ route, navigation }) => {
 
-    const mapView = React.useRef()
+    const mapView = useRef()
 
-    const [restaurant, setRestaurant] = React.useState(null)
-    const [streetName, setStreetName] = React.useState("")
-    const [fromLocation, setFromLocation] = React.useState(null)
-    const [toLocation, setToLocation] = React.useState(null)
-    const [region, setRegion] = React.useState(null)
-    const [duration, setDuration] = React.useState(0)
-    const [isReady, setIsReady] = React.useState(null)
-    const [angle, setAngle] = React.useState(null)
+    const [restaurant, setRestaurant] = useState(null)
+    const [streetName, setStreetName] = useState("")
+    const [fromLocation, setFromLocation] = useState(null)
+    const [toLocation, setToLocation] = useState(null)
+    const [region, setRegion] = useState(null)
+    const [duration, setDuration] = useState(0)
+    const [isReady, setIsReady] = useState(null)
+    const [angle, setAngle] = useState(null)
 
-    React.useEffect(() => {
+    useEffect(() => {
         let {restaurant, currentLocation} = route.params;
 
         let fromLoc = currentLocation.gps

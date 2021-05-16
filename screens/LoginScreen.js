@@ -20,7 +20,7 @@ const LoginScreen = ({navigation}) => {
         
         const unsubscribe = auth.onAuthStateChanged(function(user) {
             if (user) {
-                navigation.replace('Chat')
+                navigation.replace('Home')
             } else {
                 navigation.canGoBack()&&navigation.popToTop();
             }
