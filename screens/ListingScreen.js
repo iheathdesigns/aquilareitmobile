@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, SafeAreaView, View, Text, TouchableOpacity, Image, Animated } from 'react-native';
 
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
@@ -7,12 +7,12 @@ import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 const ListingScreen = ({ route, navigation }) => {
 
         const scrollX = new Animated.Value(0);
-        const [restaurant, setRestaurant] = React.useState(null);
-        const [currentLocation, setCurrentLocation] = React.useState(null);
-        const [orderItems, setOrderItems] =  React.useState([]);
+        const [restaurant, setRestaurant] = useState(null);
+        const [currentLocation, setCurrentLocation] = useState(null);
+        const [orderItems, setOrderItems] =  useState([]);
         
 
-        React.useEffect(() => {
+        useEffect(() => {
             let {item, currentLocation} = route.params;
 
             setRestaurant(item)

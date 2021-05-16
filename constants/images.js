@@ -4,6 +4,14 @@ const avatar_2 = require("../assets/images/avatar-2.jpg");
 const avatar_3 = require("../assets/images/avatar-3.jpg");
 const avatar_4 = require("../assets/images/avatar-4.jpg");
 const avatar_5 = require("../assets/images/avatar-5.jpg");
+const house_1 = require('../assets/images/house-1.jpg');
+const house_2 = require('../assets/images/house-2.jpg');
+const house_3 = require('../assets/images/house-3.jpg');
+const house_4 = require('../assets/images/house-4.jpg');
+const house_5 = require('../assets/images/house-5.jpg');
+const apartment_1 = require('../assets/images/apartment-1.jpg');
+const condo_1 = require('../assets/images/condo-1.jpg');
+const townhouse_1 = require('../assets/images/townhouse-1.jpg');
 const baked_fries = require("../assets/images/baked-fries.jpg");
 const burger_restaurant_1 = require("../assets/images/burger-restaurant.jpg");
 const burger_restaurant_2 = require("../assets/images/burger-restaurant-2.jpg");
@@ -35,6 +43,14 @@ export default {
     avatar_3,
     avatar_4,
     avatar_5,
+    house_1,
+    house_2,
+    house_3,
+    house_4,
+    house_5,
+    apartment_1,
+    condo_1,
+    townhouse_1,
     baked_fries,
     burger_restaurant_1,
     burger_restaurant_2,

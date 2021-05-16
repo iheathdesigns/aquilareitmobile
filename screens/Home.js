@@ -1,12 +1,12 @@
 
 import { NavigationContainer } from '@react-navigation/native';
-import React from 'react';
+import React, { useState } from 'react';
 import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 
 const Home = ({ navigation }) => {
 
-      // Dummy Datas
+      // Dummy Data
 
       const initialCurrentLocation = {
         streetName: "Charlotte",
@@ -34,38 +34,8 @@ const Home = ({ navigation }) => {
         },
         {
             id: 4,
-            name: "Salads",
-            icon: icons.salad,
-        },
-        {
-            id: 5,
-            name: "Burgers",
-            icon: icons.hamburger,
-        },
-        {
-            id: 6,
-            name: "Pizza",
-            icon: icons.pizza,
-        },
-        {
-            id: 7,
-            name: "Snacks",
-            icon: icons.fries,
-        },
-        {
-            id: 8,
-            name: "Sushi",
-            icon: icons.sushi,
-        },
-        {
-            id: 9,
-            name: "Desserts",
-            icon: icons.donut,
-        },
-        {
-            id: 10,
-            name: "Drinks",
-            icon: icons.drink,
+            name: "Multi Family Units",
+            icon: icons.hotdog,
         },
 
     ]
@@ -78,11 +48,11 @@ const Home = ({ navigation }) => {
     const restaurantData = [
         {
             id: 1,
-            name: "123 Anywhere",
+            name: "123 Anywhere Street",
             rating: 4.8,
-            categories: [5, 7],
+            categories: [1, 3],
             priceRating: affordable,
-            photo: images.burger_restaurant_1,
+            photo: images.townhouse_1,
             duration: "30 - 45 min",
             location: {
                 latitude: 1.5347282806345879,
@@ -121,11 +91,11 @@ const Home = ({ navigation }) => {
         },
         {
             id: 2,
-            name: "ByProgrammers Pizza",
+            name: "780 N Graham",
             rating: 4.8,
-            categories: [2, 4, 6],
+            categories: [2, 4],
             priceRating: expensive,
-            photo: images.pizza_restaurant,
+            photo: images.condo_1,
             duration: "15 - 20 min",
             location: {
                 latitude: 1.556306570595712,
@@ -172,11 +142,11 @@ const Home = ({ navigation }) => {
         },
         {
             id: 3,
-            name: "ByProgrammers Hotdogs",
+            name: "216 Queens Ave",
             rating: 4.8,
             categories: [3],
             priceRating: expensive,
-            photo: images.hot_dog_restaurant,
+            photo: images.house_5,
             duration: "20 - 25 min",
             location: {
                 latitude: 1.5238753474714375,
@@ -199,11 +169,11 @@ const Home = ({ navigation }) => {
         },
         {
             id: 4,
-            name: "ByProgrammers Sushi",
+            name: "920 Tryon Street",
             rating: 4.8,
-            categories: [8],
+            categories: [2, 3],
             priceRating: expensive,
-            photo: images.japanese_restaurant,
+            photo: images.house_3,
             duration: "10 - 15 min",
             location: {
                 latitude: 1.5578068150528928,
@@ -226,11 +196,11 @@ const Home = ({ navigation }) => {
         },
         {
             id: 5,
-            name: "ByProgrammers Cuisine",
+            name: "623 Statesville Corner",
             rating: 4.8,
             categories: [1, 2],
             priceRating: affordable,
-            photo: images.noodle_shop,
+            photo: images.house_2,
             duration: "15 - 20 min",
             location: {
                 latitude: 1.558050496260768,
@@ -279,11 +249,11 @@ const Home = ({ navigation }) => {
         {
 
             id: 6,
-            name: "ByProgrammers Dessets",
+            name: "856 Dilworth Ave",
             rating: 4.9,
-            categories: [9, 10],
+            categories: [2, 4],
             priceRating: affordable,
-            photo: images.kek_lapis_shop,
+            photo: images.house_4,
             duration: "35 - 40 min",
             location: {
                 latitude: 1.5573478487252896,
@@ -325,10 +295,10 @@ const Home = ({ navigation }) => {
 
     ]
 
-    const [categories, setCategories] = React.useState(categoryData)
-    const [selectedCategory, setSelectedCategory] = React.useState(null)
-    const [restaurants, setRestaurants] = React.useState(restaurantData)
-    const [currentLocation, setCurrentLocation] = React.useState(initialCurrentLocation)
+    const [categories, setCategories] = useState(categoryData)
+    const [selectedCategory, setSelectedCategory] = useState(null)
+    const [restaurants, setRestaurants] = useState(restaurantData)
+    const [currentLocation, setCurrentLocation] = useState(initialCurrentLocation)
 
 
     function onSelectCategory(category) {
