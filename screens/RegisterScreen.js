@@ -1,8 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React, {useState} from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Image } from 'react-native'
 import { Input, Button } from 'react-native-elements'
 import { auth } from '../firebase'
+import { images } from '../constants/images'
 
 const RegisterScreen = ({navigation}) => {
 
@@ -34,6 +35,9 @@ const RegisterScreen = ({navigation}) => {
 
     return (
         <View style={styles.container}>
+            <Image 
+            style={styles.fullLogo}
+            source={images.fullLogo}/>
             <Input 
             placeholder='Enter your name'
             label='Name'
@@ -78,6 +82,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         padding: 10
+    },
+    fullLogo: {
+        width: 200,
+        height: 120,
+        marginBottom: 10,
+        marginTop: 50
     }
 })
 

@@ -67,9 +67,10 @@ const styles = StyleSheet.create({
         padding: 10
     },
     fullLogo: {
-        width: 66,
+        width: 200,
+        height: 120,
         marginBottom: 10,
-        marginTop: 10
+        marginTop: 50
     }
 })
 
