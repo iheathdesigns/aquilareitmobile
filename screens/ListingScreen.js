@@ -10,6 +10,8 @@ const ListingScreen = ({ route, navigation }) => {
         const [restaurant, setRestaurant] = useState(null);
         const [currentLocation, setCurrentLocation] = useState(null);
         const [orderItems, setOrderItems] =  useState([]);
+
+        
         
 
         useEffect(() => {

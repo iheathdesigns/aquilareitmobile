@@ -6,6 +6,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import Home from './screens/Home';
 import LocationScreen from './screens/LocationScreen';
 import ListingScreen from './screens/ListingScreen';
+import ChatScreen from './screens/ChatScreen';
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Listing" component={ListingScreen} />
         <Stack.Screen name="Location" component={LocationScreen} />
+        <Stack.Screen name="Chat" component={ChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -3,8 +3,26 @@ import { NavigationContainer } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, StyleSheet, TouchableOpacity, Image, FlatList } from 'react-native';
 import { icons, images, SIZES, COLORS, FONTS } from '../constants';
+import { db } from '../firebase';
 
 const Home = ({ navigation }) => {
+
+    async function getProperties(propertiesRetrieved){
+
+        const propertyList = [];
+
+    const snapshot = await db.firestore()
+    .collection('real_estate_listings')
+    .orderBy('createdAt')
+    .get()
+
+    snapshot.forEach((doc) => {
+        propertyList.push(doc.data());
+    });
+    propertiesRetrieved(propertyList);
+    }
+
+    
 
       // Dummy Data
 
@@ -594,6 +612,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingTop: 20,
         backgroundColor: COLORS.lightGray4
     },
     shadow: {

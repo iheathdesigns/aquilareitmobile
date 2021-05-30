@@ -111,21 +111,21 @@ const LocationScreen = ({ route, navigation }) => {
             </Marker>
         ) 
 
-        const carIcon = () => (
-            <Marker
-            coordinate={fromLocation}
-            anchor={{x: 0.5, y: 0.5}}
-            flat={true}
-            rotation={angle}>
-                <Image
-                source={icons.car}
-                style={{
-                    width: 40,
-                    height: 40
-                }} />
+        // const carIcon = () => (
+        //     <Marker
+        //     coordinate={fromLocation}
+        //     anchor={{x: 0.5, y: 0.5}}
+        //     flat={true}
+        //     rotation={angle}>
+        //         <Image
+        //         source={icons.car}
+        //         style={{
+        //             width: 40,
+        //             height: 40
+        //         }} />
 
-            </Marker>
-        )
+        //     </Marker>
+        // )
 
         return (
             <View style={{flex: 1}}>
@@ -137,7 +137,7 @@ const LocationScreen = ({ route, navigation }) => {
 
                     
                     {destinationMarker()}
-                    {carIcon()}
+                    {/* {carIcon()} */}
                 </MapView>
             </View>
         )
@@ -253,7 +253,7 @@ const LocationScreen = ({ route, navigation }) => {
                                 justifyContent: 'center',
                                 borderRadius: 10
                             }}
-                            onPress={() => navigation.navigate("Home")}>
+                            onPress={() => navigation.navigate("Chat")}>
                                 <Text 
                                 style={{
                                     ...FONTS.h4,
