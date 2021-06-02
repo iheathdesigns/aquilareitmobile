@@ -21,7 +21,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Listing" component={ListingScreen} />
         <Stack.Screen name="Location" component={LocationScreen} />
-        <Stack.Screen name="Chat" component={ChatScreen} />
+        <Stack.Screen options={{headerShown: true}} name="Chat" component={ChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

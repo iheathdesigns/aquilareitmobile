@@ -612,7 +612,7 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 20,
+        paddingTop: 50,
         backgroundColor: COLORS.lightGray4
     },
     shadow: {
