@@ -8,7 +8,7 @@ const LocationScreen = ({ route, navigation }) => {
 
     const mapView = useRef()
 
-    const [restaurant, setRestaurant] = useState(null)
+    const [property, setProperty] = useState(null)
     const [streetName, setStreetName] = useState("")
     const [fromLocation, setFromLocation] = useState(null)
     const [toLocation, setToLocation] = useState(null)
@@ -18,10 +18,10 @@ const LocationScreen = ({ route, navigation }) => {
     const [angle, setAngle] = useState(null)
 
     useEffect(() => {
-        let {restaurant, currentLocation} = route.params;
+        let {property, currentLocation} = route.params;
 
         let fromLoc = currentLocation.gps
-        let toLoc = restaurant.location
+        let toLoc = property.location
         let street = currentLocation.streetName
 
         let mapRegion = {
@@ -31,7 +31,7 @@ const LocationScreen = ({ route, navigation }) => {
             longitudeDelta: Math.abs(fromLoc.longitude - toLoc.longitude) * 2
         }
 
-        setRestaurant(restaurant)
+        setProperty(property)
         setStreetName(street)
         setFromLocation(fromLoc)
         setToLocation(toLoc)
@@ -207,7 +207,7 @@ const LocationScreen = ({ route, navigation }) => {
                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
                         {/* Avatar */}
                         <Image
-                        source={restaurant?.courier.avatar}
+                        source={property?.courier.avatar}
                         style={{
                             width: 50,
                             height: 50,
@@ -217,7 +217,7 @@ const LocationScreen = ({ route, navigation }) => {
                         <View style={{flex: 1, marginLeft: SIZES.padding}}>
                             {/* Name & Rating */}
                             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                                <Text style={{...FONTS.h4}}>{restaurant?.courier.name}</Text>
+                                <Text style={{...FONTS.h4}}>{property?.courier.name}</Text>
                                 <View style={{flexDirection: 'row'}}>
                                     <Image
                                     source={icons.star}
@@ -228,12 +228,12 @@ const LocationScreen = ({ route, navigation }) => {
                                         marginRight: SIZES.padding
                                     }} />
                                     <Text style={{...FONTS.body3}}>
-                                        {restaurant?.rating}
+                                        {property?.rating}
                                     </Text>
                                 </View>
                             </View>
-                            {/* Restaurant */}
-                            <Text style={{color: COLORS.darkGray, ...FONTS.body4}}>{restaurant?.name}</Text>
+                            {/* Property */}
+                            <Text style={{color: COLORS.darkGray, ...FONTS.body4}}>{property?.name}</Text>
                         </View>
                     </View>
                         {/* Buttons */}

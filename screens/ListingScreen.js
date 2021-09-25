@@ -7,7 +7,7 @@ import { icons, images, SIZES, COLORS, FONTS } from '../constants';
 const ListingScreen = ({ route, navigation }) => {
 
         const scrollX = new Animated.Value(0);
-        const [restaurant, setRestaurant] = useState(null);
+        const [property, setProperty] = useState(null);
         const [currentLocation, setCurrentLocation] = useState(null);
         const [orderItems, setOrderItems] =  useState([]);
 
@@ -17,7 +17,7 @@ const ListingScreen = ({ route, navigation }) => {
         useEffect(() => {
             let {item, currentLocation} = route.params;
 
-            setRestaurant(item)
+            setProperty(item)
             setCurrentLocation(currentLocation)
         })
 
@@ -96,7 +96,7 @@ const ListingScreen = ({ route, navigation }) => {
                         }} />
 
                     </TouchableOpacity>
-                    {/* Restaurant name section */}
+                    {/* Property name section */}
                     <View 
                     style={{
                         flex: 1,
@@ -112,7 +112,7 @@ const ListingScreen = ({ route, navigation }) => {
                             borderRadius: SIZES.radius,
                             backgroundColor: COLORS.lightGray3
                         }}>
-                            <Text style={{...FONTS.h3}}>{restaurant?.name}</Text>
+                            <Text style={{...FONTS.h3}}>{property?.name}</Text>
 
                         </View>
 
@@ -137,7 +137,7 @@ const ListingScreen = ({ route, navigation }) => {
             )
         }
 
-        function renderFoodInfo() {
+        function renderSiteInfo() {
             return (
                 <Animated.ScrollView
                 horizontal
@@ -150,7 +150,7 @@ const ListingScreen = ({ route, navigation }) => {
                 ], {useNativeDriver: false})}
                 >
                     {
-                        restaurant?.menu.map((item, index) => (
+                        property?.menu.map((item, index) => (
                             <View 
                             key={`menu-${index}`}
                             style={{
@@ -158,7 +158,7 @@ const ListingScreen = ({ route, navigation }) => {
                             }}>
                                 <View
                                 style={{ height: SIZES.height * 0.35 }}>
-                                    {/* Food image */}
+                                    {/* Site image */}
                                     <Image 
                                     source={item.photo}
                                     resizeMode='cover'
@@ -232,7 +232,7 @@ const ListingScreen = ({ route, navigation }) => {
                                     <Text style={{...FONTS.body3}}>{item.description}</Text>
                                 </View>
 
-                                {/* Calories */}
+                                {/* Ratings */}
                                 <View
                                 style={{
                                     flexDirection: 'row',
@@ -271,7 +271,7 @@ const ListingScreen = ({ route, navigation }) => {
                         justifyContent: 'center',
                         height: SIZES.padding
                     }}>
-                        {restaurant?.menu.map((item, index) => {
+                        {property?.menu.map((item, index) => {
                             const opacity = dotPosition.interpolate({
                                 inputRange: [index - 1, index, index + 1],
                                 outputRange: [0.3, 1, 0.3],
@@ -385,7 +385,7 @@ const ListingScreen = ({ route, navigation }) => {
                                         borderRadius: SIZES.radius
                                     }}
                                     onPress={() => navigation.navigate("Location", {
-                                        restaurant: restaurant,
+                                        property: property,
                                         currentLocation: currentLocation
                                     })}
                                     >
@@ -408,7 +408,7 @@ const ListingScreen = ({ route, navigation }) => {
         style={styles.container}
         >
             {renderHeader()}
-            {renderFoodInfo()}
+            {renderSiteInfo()}
             {renderOrder()}
         </SafeAreaView>
     )

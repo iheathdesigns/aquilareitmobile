@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import { View, StyleSheet, Image } from 'react-native'
 import { Input, Button } from 'react-native-elements'
 import { auth } from '../firebase'
-import { images } from '../constants/images'
+import { images } from '../constants'
 
 const RegisterScreen = ({navigation}) => {
 
@@ -40,13 +40,15 @@ const RegisterScreen = ({navigation}) => {
             source={images.fullLogo}/>
             <Input 
             placeholder='Enter your name'
+            autoCapitalize='none'
             label='Name'
             leftIcon={{type: 'material', name: 'badge'}}
             value={name}
             onChangeText={text => setName(text)}
             />
-             <Input 
+            <Input 
             placeholder='Enter your email'
+            autoCapitalize='none'
             label='Email'
             leftIcon={{type: 'material', name: 'email'}}
             value={email}
@@ -54,6 +56,7 @@ const RegisterScreen = ({navigation}) => {
             />
             <Input 
             placeholder='Enter your password'
+            autoCapitalize='none'
             label='Password'
             leftIcon={{type: 'material', name: 'lock'}}
             value={password}
@@ -62,6 +65,7 @@ const RegisterScreen = ({navigation}) => {
             />
             <Input 
             placeholder='Enter your image URL'
+            autoCapitalize='none'
             label='Profile Picture'
             leftIcon={{type: 'material', name: 'face'}}
             value={imageURL}

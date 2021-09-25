@@ -37,6 +37,7 @@ const LoginScreen = ({navigation}) => {
             source={images.fullLogo}/>
             <Input 
             placeholder='Enter your email'
+            autoCapitalize='none'
             label='Email'
             leftIcon={{type: 'material', name: 'email'}}
             value={email}
@@ -44,6 +45,7 @@ const LoginScreen = ({navigation}) => {
             />
             <Input 
             placeholder='Enter your password'
+            autoCapitalize='none'
             label='Password'
             leftIcon={{type: 'material', name: 'lock'}}
             value={password}

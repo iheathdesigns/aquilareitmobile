@@ -63,7 +63,7 @@ const Home = ({ navigation }) => {
     const fairPrice = 2
     const expensive = 3
 
-    const restaurantData = [
+    const propertyData = [
         {
             id: 1,
             name: "123 Anywhere Street",
@@ -315,15 +315,15 @@ const Home = ({ navigation }) => {
 
     const [categories, setCategories] = useState(categoryData)
     const [selectedCategory, setSelectedCategory] = useState(null)
-    const [restaurants, setRestaurants] = useState(restaurantData)
+    const [properties, setProperties] = useState(propertyData)
     const [currentLocation, setCurrentLocation] = useState(initialCurrentLocation)
 
 
     function onSelectCategory(category) {
         //filter restaurant
-        let restaurantList = restaurantData.filter(a => a.categories.includes(category.id))
+        let propertyList = propertyData.filter(a => a.categories.includes(category.id))
 
-        setRestaurants(restaurantList)
+        setProperties(propertyList)
 
         setSelectedCategory(category)
     }
@@ -477,7 +477,7 @@ const Home = ({ navigation }) => {
         )
     }
 
-        function renderRestaurantList() {
+        function renderPropertyList() {
             const renderItem = ({item}) => (
                 <TouchableOpacity
                 style={{marginBottom: SIZES.padding * 2}}
@@ -526,7 +526,7 @@ const Home = ({ navigation }) => {
                         </View>
                     </View>
 
-                    {/* Restaurant Info Section */}
+                    {/* Property Info Section */}
                     <Text style={{...FONTS.body2}}>{item.name}</Text>
 
                     <View
@@ -590,7 +590,7 @@ const Home = ({ navigation }) => {
             )
             return (
                 <FlatList
-                data={restaurants}
+                data={properties}
                 keyExtractor={item => `${item.id}`}
                 renderItem={renderItem}
                 contentContainerStyle={{
@@ -604,7 +604,7 @@ const Home = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
             {renderHeader()}
             {renderMainCategories()}
-            {renderRestaurantList()}
+            {renderPropertyList()}
         </SafeAreaView>
     )
 }
